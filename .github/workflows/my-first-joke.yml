@@ -8,16 +8,16 @@ jobs:
             - uses: actions/setup-node@v2
             - run: npm install --global @mikemcbride/dad-jokes
             - run: dad-jokes
-            - name: Check out repository code
+            - name: Create file
+              run: dad-jokes >> jokes.txt
+            - name: clone project
               uses: actions/checkout@v4
-            - name: Create report file
-              run: dad-jokes > report.txt
             - name: Commit and push joke report
               run: |
-                git config --global user.name "github-actions[bot]"
-                git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                git checkout -b joke-reports
-                git add report.txt
-                git commit -m "${{ github.event_name }}-by-${{ github.actor }}"
-                git push origin joke-reports --force
+               git config --global user.name "github-actions[bot]"
+               git config --global user.email "github-actions[bot]@users.noreply.github.com"
+               git checkout -b joke-reports
+               git add jokes.txt
+               git commit -m "${{ github.event_name }}-by-${{ github.actor }}"
+               git push origin joke-reports --force
         
