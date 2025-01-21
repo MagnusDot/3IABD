@@ -8,10 +8,10 @@ jobs:
             - uses: actions/setup-node@v2
             - run: npm install --global @mikemcbride/dad-jokes
             - run: dad-jokes
-            - name: Create file
-              run: dad-jokes >> jokes.txt
             - name: clone project
               uses: actions/checkout@v4
+            - name: Create file
+              run: dad-jokes >> jokes.txt
             - name: Commit and push joke report
               run: |
                git config --global user.name "github-actions[bot]"
