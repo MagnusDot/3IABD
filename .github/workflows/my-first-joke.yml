@@ -8,3 +8,9 @@ jobs:
             - uses: actions/setup-node@v2
             - run: npm install --global @mikemcbride/dad-jokes
             - run: dad-jokes
+            - name: Check out repository code
+              uses: actions/checkout@v4
+            - name: Create report file
+              run: dad-jokes > report.txt
+            - name: Stage and commit
+              run: git add . && git commit -m 'Mon commit' && git push
