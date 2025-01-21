@@ -1,6 +1,10 @@
 name: 'ma super pipeline'
 run-name: ${{ github.actor }} We are testing Github Action 🚀
-on: [push]
+on: 
+    push:
+        branches: 
+            - master
+            - lol
 jobs:
     my-first-job:
         runs-on: ubuntu-latest
