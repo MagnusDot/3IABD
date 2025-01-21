@@ -4,7 +4,6 @@ on:
     push:
         branches: 
             - master
-            - lol
 jobs:
     my-first-job:
         runs-on: ubuntu-latest

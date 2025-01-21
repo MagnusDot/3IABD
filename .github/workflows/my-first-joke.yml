@@ -1,0 +1,10 @@
+name: Ma blague
+run-name: Je suis une blague
+on: ['push']
+jobs:
+    my-joke:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: action/setup-node@v2
+            - run: npm install --global @mikemcbride/dad-jokes
+            - run: dad-jokes
