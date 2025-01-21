@@ -1,0 +1,16 @@
+{
+    "name": "mon-projet",
+    "version": "1.0.0",
+    "description": "Un projet JavaScript avec ESLint configuré.",
+    "main": "index.js",
+    "scripts": {
+      "lint": "eslint ."
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "eslint": "^8.0.0"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+  
