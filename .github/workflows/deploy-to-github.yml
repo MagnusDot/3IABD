@@ -9,7 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  
+
 jobs:
   # Single deploy job no building
   deploy:
@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # upload entire directory
-          path: '.'
+          path: './site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
