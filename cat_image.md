@@ -1,0 +1,1 @@
+![Chat aléatoire](cat.jpg)
