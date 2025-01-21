@@ -12,7 +12,7 @@ jobs:
               uses: actions/checkout@v4
             - name: Create file
               run: dad-jokes >> jokes.txt
-            - name: Commit and push joke report
+            - name: Commit and push joke reports
               run: |
                git config --global user.name "github-actions[bot]"
                git config --global user.email "github-actions[bot]@users.noreply.github.com"
