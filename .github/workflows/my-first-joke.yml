@@ -20,4 +20,8 @@ jobs:
                git add jokes.txt
                git commit -m "${{ github.event_name }}-by-${{ github.actor }}"
                git push origin joke-reports --force
-        
+    second-job:
+        runs-on: ubuntu-latest
+        needs: my-joke
+        steps:
+            - run: echo "hellow world"    
