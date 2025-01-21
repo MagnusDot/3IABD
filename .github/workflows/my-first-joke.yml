@@ -12,5 +12,12 @@ jobs:
               uses: actions/checkout@v4
             - name: Create report file
               run: dad-jokes > report.txt
-            - name: Stage and commit
-              run: git add . && git commit -m 'Mon commit' && git push
+            - name: Commit and push joke report
+              run: |
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                git checkout -b joke-reports
+                git add report.txt
+                git commit -m "Ajout d'une nouvelle blague"
+                git push origin joke-reports --force
+        
