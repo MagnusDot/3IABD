@@ -20,29 +20,11 @@ jobs:
       - name: 📄 Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      # Check for symlinks and hard links
-      - name: 🔍 Check for problematic files
-        run: |
-          echo "Checking for symlinks..."
-          find . -type l
-          echo "Checking total size..."
-          du -sh .
-
-      # Remove any potential problematic files
-      - name: 🧹 Clean up before artifact creation
-        run: |
-          # Remove any potential symlinks
-          find . -type l -delete
-          # Remove hidden files and directories (adjust as needed)
-          find . -name ".*" -not -name ".git*" -exec rm -rf {} +
-      - name: test
-        run : ls
-
       - name: Archive code coverage results
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: .
+          path: ./site
 
   deploy:
     environment:
