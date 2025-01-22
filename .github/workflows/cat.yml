@@ -1,5 +1,4 @@
 name: Ajouter une image de chat
-
 on:
   push:
     branches:
@@ -11,7 +10,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Télécharger une image de chat
         run: |
           curl -o cat.jpg https://cataas.com/cat  # Télécharge l'image du chat
